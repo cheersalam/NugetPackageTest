@@ -26,7 +26,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    path: $(System.DefaultWorkingDirectory)/WebRTCwindows-static-windows-x86_32
+    path: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32
     artifact: WebRTC-static-windows-x86_32
 
 - task: NuGetCommand@2
