@@ -2,7 +2,6 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>WebRTC-static-windows-x86_32</id>
-    <version>0.1.2</version>
     <title>WebRTC static build</title>
     <projectUrl>https://www.alamtechstuffs.com</projectUrl>
     <authors>Mohammad Alam</authors>
