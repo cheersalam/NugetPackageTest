@@ -5,6 +5,7 @@
     <title>WebRTC static build</title>
     <projectUrl>https://www.alamtechstuffs.com</projectUrl>
     <authors>Mohammad Alam</authors>
+	<version>1.1.1</version>
     <owners>Alam tech stuffs</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Alam trying to build nuget package
