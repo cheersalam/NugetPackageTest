@@ -33,9 +33,6 @@ steps:
   inputs:
     command: pack
     versioningScheme: byPrereleaseNumber
-    majorVersion: '$(Major)'
-    minorVersion: '$(Minor)'
-    patchVersion: '$(Patch)'
     packagesToPack: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32/WebRTC-static-windows-x86_32.nuspec
 
 - task: NuGetCommand@2
