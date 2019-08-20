@@ -13,7 +13,7 @@
 Note: This package is statically linked. When applying, the default VC runtime setting for the target project will be changed to /MT and /MTd respectively.</description>
     <summary>Windows build of WebRTC.</summary>
     <copyright>Copyright Alam 2019</copyright>
-    <tags>WebRTC Native</tags>
+    <tags>WebRTC Native native x64 x86</tags>
   </metadata>
   <files>
   <file src="build\**" target="build" />
