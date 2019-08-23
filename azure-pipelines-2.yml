@@ -1,0 +1,48 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+variables:
+  Major: '0'
+  Minor: '1'
+  Patch: '2'
+
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    path: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32
+    artifact: WebRTC-static-windows-x86_32_artifact
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32
+    artifactName: WebRTC-static-windows-x86_32_artifact
+
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    versioningScheme: byPrereleaseNumber
+    packagesToPack: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32/WebRTC-static-windows-x86_32.nuspec
+
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    publishVstsFeed: 'WebRTC-static-windows-x86_32'
+    allowPackageConflicts: true
