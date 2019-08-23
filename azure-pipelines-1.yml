@@ -28,6 +28,11 @@ steps:
   inputs:
     path: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32
     artifact: WebRTC-static-windows-x86_32_artifact
+    
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(System.DefaultWorkingDirectory)/WebRTC-static-windows-x86_32
+    artifactName: WebRTC-static-windows-x86_32_artifact
 
 - task: NuGetCommand@2
   inputs:
